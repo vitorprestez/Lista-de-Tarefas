@@ -6,6 +6,13 @@
     width: 100%;
    
 }
+.form-tarefa h1{
+    padding: 50px 0 20px 0;
+    font-size: 30px;
+    font-family: arial;
+    font-weight: bold;
+
+}
 .form-tarefa_input{
     width: 30%;
     padding: 8px;

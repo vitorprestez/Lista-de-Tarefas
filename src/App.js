@@ -19,11 +19,18 @@ class App extends Component {
         arrayTarefas: this.arrayTarefas
       })
   }
+
+  apagaUmaTarefa(){
+    console.log("teste");
+  }
+
+
   render(){
     return (  
       //linha 27- atualizado meu array para renderizar   
       <section className="conteudo">
-          <FormTarefa criarTarefa = {this.criarTarefa.bind(this)} arrayTarefas={this.arrayTarefas}/>     
+        
+          <FormTarefa criarTarefa = {this.criarTarefa.bind(this)} arrayTarefas={this.arrayTarefas} />     
           <ListaTarefa arrayTarefas={this.arrayTarefas}/>
       </section>  
     );
