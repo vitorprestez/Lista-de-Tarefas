@@ -1,15 +1,20 @@
 
 .tarefa{
     text-align: center;
-    display: block;
+    display: flex;
     margin: 0px auto 20px auto;
     width: 35%;
 }
 
 .tarefa_titulo{
+    font-size: 18px;
     text-align: left;
     width: 80%;
     margin: 0 0 0 0;
+}
+
+DeleteSVG{
+    color: red;
 }
 
 
