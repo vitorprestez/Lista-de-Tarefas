@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import FormTarefa from './components/FormTarefa/FormTarefa'
+import ListaTarefa from './components/ListaTarefa/ListaTarefa'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(){
+    super();
+    this.arrayTarefas = [];
+    this.state = {}
+  }
+  criarTarefa(titulo){
+      const novaTarefa =titulo;
+      this.arrayTarefas.push(novaTarefa);
+      //atualiza o estado interno do componente(pra o estado tarefas do objeto ser igual o atributo tarefas passado)
+      this.setState({
+        arrayTarefas: this.arrayTarefas
+      })
+  }
+  render(){
+    return (     
+      <section className="conteudo">
+          <FormTarefa criarTarefa = {this.criarTarefa.bind(this)} arrayTarefas={this.arrayTarefas}/>
+          <ListaTarefa arrayTarefas={this.arrayTarefas}/>
+      </section>  
+    );
+  }
 }
 
-export default App;
+export default App
