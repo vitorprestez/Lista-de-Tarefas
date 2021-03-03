@@ -7,7 +7,9 @@ export class ListaTarefa extends Component{
  
     render() {
         return (
-                <ul className="lista-tarefa">
+            //linha 13-percorro o meu array
+            //linha 16- minha tarefa(Tarefa) recebe a tarefa que esta sendo mapeada
+                <ul className="lista-tarefa"> 
                     {this.props.arrayTarefas.map((tarefa,index)=>{
                         return(
                             <li className="lista-tarefa_item" key={index}>

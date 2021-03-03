@@ -10,7 +10,9 @@ class App extends Component {
     this.state = {}
   }
   criarTarefa(titulo){
+      //variavel auxixilar recebe o que foi escrito no input
       const novaTarefa =titulo;
+      //adiciona o elemento na ultima poisção com o push
       this.arrayTarefas.push(novaTarefa);
       //atualiza o estado interno do componente(pra o estado tarefas do objeto ser igual o atributo tarefas passado)
       this.setState({

@@ -2,14 +2,14 @@
 .tarefa{
     text-align: center;
     display: block;
-    margin: 0 auto;
+    margin: 0px auto 20px auto;
     width: 35%;
 }
 
 .tarefa_titulo{
     text-align: left;
     width: 80%;
-    margin: 0 12% 0 0;
+    margin: 0 0 0 0;
 }
 
 
@@ -17,7 +17,7 @@
 @media(max-width:768px){
     .tarefa {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 10px auto;
         width: 80%;
         text-align: center;
         

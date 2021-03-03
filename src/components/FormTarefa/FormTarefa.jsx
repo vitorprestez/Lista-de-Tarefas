@@ -18,8 +18,7 @@ export class FormTarefa extends Component {
         evento.preventDefault();
         evento.stopPropagation();
         this.props.criarTarefa(this.titulo);
-    
-        //this.props.tarefas.push(this.titulo);
+
     }
     render() {
         return (
