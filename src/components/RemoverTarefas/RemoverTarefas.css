@@ -1,0 +1,19 @@
+.limpar-itens{
+    text-align: center;
+    width: 100%;
+}
+.limpar-itens_button{
+    color:#6558f5;
+    border-color: #6558f5;
+    border-width: 1px;
+    border-radius: 3px;
+    background-color: white;
+    padding: 5px 5px;
+    width: 20%;
+}
+
+@media (max-width: 768px){
+    .limpar-itens_button{
+        width: 60%;
+    }
+}

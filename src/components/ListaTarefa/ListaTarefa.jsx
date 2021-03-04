@@ -13,8 +13,12 @@ export class ListaTarefa extends Component{
                     {this.props.arrayTarefas.map((tarefa,index)=>{
                         return(
                             <li className="lista-tarefa_item" key={index}>
-                            <Tarefa tarefa={tarefa}/>
+                            <Tarefa 
+                            indice={index}
+                            apagarTarefa = {this.props.apagarTarefa}
+                            tarefa={tarefa}/>
                         </li>
+
                         );
                     })}                  
                 </ul>

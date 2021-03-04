@@ -6,13 +6,18 @@ import { ReactComponent as CompletSVG} from "../../assets/img/complet.svg";
 
 export class Tarefa extends Component {
 
+    apagar(){
+        const indice = this.props.indice;
+        this.props.apagarTarefa(indice);
+    }
+
     render() {
         return (
             <div className="tarefa">
                 <h1 className="tarefa_titulo">{this.props.tarefa}</h1>
                 <CompletSVG/>
                 <EditSVG/>
-                <DeleteSVG/>           
+                <DeleteSVG onClick={this.apagar.bind(this)}/>         
             </div>
         )
     }
