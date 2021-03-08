@@ -14,7 +14,7 @@ export class FormTarefa extends Component {
     }
 
     _criarTarefa(evento){
-        evento.preventDefault();
+        //evento.preventDefault();
         evento.stopPropagation();
         //chamo a função que esta no meu App.js
         this.props.criarTarefa(this.titulo);

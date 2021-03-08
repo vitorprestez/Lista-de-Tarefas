@@ -15,9 +15,9 @@ export class Tarefa extends Component {
         return (
             <div className="tarefa">
                 <h1 className="tarefa_titulo">{this.props.tarefa}</h1>
-                <CompletSVG/>
-                <EditSVG/>
-                <DeleteSVG onClick={this.apagar.bind(this)}/>         
+                <CompletSVG className="tarefa-button_complet"/>
+                <EditSVG className="tarefa-button_edit"/>
+                <DeleteSVG className="tarefa-button_delete"onClick={this.apagar.bind(this)}/>         
             </div>
         )
     }

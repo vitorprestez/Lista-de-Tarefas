@@ -7,7 +7,10 @@ import ListaTarefa from './components/ListaTarefa/ListaTarefa'
 class App extends Component {
   constructor(){
     super();
-    this.arrayTarefas = [];
+    this.arrayTarefas = JSON.parse(localStorage.getItem("lista"));
+    if(this.arrayTarefas===null){
+      this.arrayTarefas=[];
+    }
     this.state = {};
   }
   criarTarefa(titulo){
@@ -18,29 +21,33 @@ class App extends Component {
       //atualiza o estado interno do componente(pra o estado tarefas do objeto ser igual o atributo tarefas passado)
       this.setState({
         arrayTarefas: this.arrayTarefas
+
       })
+
+      localStorage.setItem("lista",JSON.stringify(this.arrayTarefas));
   }
-
- 
-
 
   //função remover recebe o indice da tarefa clicada, 
   //removo o item do array usando o splice
   //seto o state atribuindo o array aux para o array original
   removerUmaTarefa(index){
-    let _arrayAuxiliar = this.state.arrayTarefas;
+    let _arrayAuxiliar = this.arrayTarefas;
     _arrayAuxiliar.splice(index,1);
     this.setState({
       arrayTarefas:_arrayAuxiliar
     })  
+    localStorage.setItem("lista",JSON.stringify(this.arrayTarefas));
   }
 
   limparLista(){
-    let _arrayAuxiliar = this.state.arrayTarefas;
+    console.log(this.arrayTarefas);
+    let _arrayAuxiliar = this.arrayTarefas;
     _arrayAuxiliar.splice(0,this.arrayTarefas.length);
     this.setState({
       arrayTarefas:_arrayAuxiliar
     })
+
+    localStorage.clear();
   }
 
   render(){
