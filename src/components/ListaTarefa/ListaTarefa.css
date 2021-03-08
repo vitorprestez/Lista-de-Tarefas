@@ -1,3 +1,26 @@
 div{
     text-align: center;
 }
+
+.limpar-itens{
+    text-align: center;
+}
+
+.limpar-itens_button{
+    color: #6558f5;
+    background-color: white;
+    border-radius: 3px;
+    border-color:#6558f5 ;
+    border-width: 1px;
+    padding: 5px;
+    width: 10%;
+    cursor: pointer;
+}
+@media (max-width:758px){
+    .limpar-itens{
+        width: 100%;
+    }
+    .limpar-itens_button{
+        width: 75%;
+    }
+}
