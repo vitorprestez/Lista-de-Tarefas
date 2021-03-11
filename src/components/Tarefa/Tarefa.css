@@ -14,7 +14,30 @@
     margin: 0 20% 5px 0;
     color: black;
     overflow: hidden;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
 }
+
+
+.tarefa-button_complet{
+    color:rgb(27, 235, 27);
+    cursor: pointer; 
+}
+.tarefa-button_complet_disabled{
+    color:gray;
+}
+
+.tarefa-button_edit{
+    color: orange;
+    cursor:pointer;
+}
+
+.tarefa-button_delete{
+    color:red;
+    cursor: pointer;
+}
+
 
 
 @media(max-width:768px){

@@ -1,26 +1,57 @@
-import React, { Component } from 'react'
-import "./Tarefa.css"
-import {ReactComponent as DeleteSVG} from "../../assets/img/delete.svg"
-import {ReactComponent as EditSVG} from "../../assets/img/edit.svg"
-import { ReactComponent as CompletSVG} from "../../assets/img/complet.svg";
+import React, { Component } from "react";
+import "./Tarefa.css";
+
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import EditIcon from "@material-ui/icons/Edit";
 
 export class Tarefa extends Component {
+  _concluirTarefa() {
+    const indice = this.props.indice;
+    this.props.concluirTarefa(indice);
+  }
+  _apagar() {
+    const indice = this.props.indice;
+    this.props.apagarTarefa(indice);
+  }
+  _editarTarefa() {
+    const indice = this.props.indice;
+    this.props._editarTarefa(indice);
+  }
 
-    apagar(){
-        const indice = this.props.indice;
-        this.props.apagarTarefa(indice);
-    }
+  render() {
+    return (
+      <div className="tarefa">
+        <h1
+          className={
+            !this.props.tarefa.concluir
+              ? "tarefa_titulo"
+              : "tarefa_titulo_disabled"
+          }
+        >
+          {this.props.tarefa}
+        </h1>
+        <CheckCircleOutlineIcon
+          className={
+            !this.props.tarefa.concluir
+              ? "tarefa-button_complet"
+              : "tarefa-button_complet_disabled"
+          }
+          onClick={this._concluirTarefa.bind(this)}
+        />
 
-    render() {
-        return (
-            <div className="tarefa">
-                <h1 className="tarefa_titulo">{this.props.tarefa}</h1>
-                <CompletSVG className="tarefa-button_complet"/>
-                <EditSVG className="tarefa-button_edit"/>
-                <DeleteSVG className="tarefa-button_delete"onClick={this.apagar.bind(this)}/>         
-            </div>
-        )
-    }
+        <EditIcon
+          className="tarefa-button_edit"
+          //onClick={this.editar.bind(this)}
+        />
+
+        <DeleteOutlineIcon
+          className="tarefa-button_delete"
+          onClick={this._apagar.bind(this)}
+        />
+      </div>
+    );
+  }
 }
 
-export default Tarefa
+export default Tarefa;

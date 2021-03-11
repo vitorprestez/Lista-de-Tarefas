@@ -9,22 +9,27 @@ class App extends Component {
     super();
     this.arrayTarefas = JSON.parse(localStorage.getItem("lista"));
     if(this.arrayTarefas===null){
-      this.arrayTarefas=[];
+      this.arrayTarefas=[{}];
     }
     this.state = {};
   }
-  criarTarefa(titulo){
+  criarTarefa(titulo,concluir,editar){
+    
       //variavel auxixilar recebe o que foi escrito no input
-      const novaTarefa =titulo;
+      let novaTarefa ={titulo,concluir,editar};
       //adiciona o elemento na ultima poisção com o push
-      this.arrayTarefas.push(novaTarefa);
+      if(novaTarefa.titulo!==''){
+        this.arrayTarefas.push(novaTarefa);
       //atualiza o estado interno do componente(pra o estado tarefas do objeto ser igual o atributo tarefas passado)
       this.setState({
         arrayTarefas: this.arrayTarefas
 
       })
 
+
       localStorage.setItem("lista",JSON.stringify(this.arrayTarefas));
+      }
+      
   }
 
   //função remover recebe o indice da tarefa clicada, 
@@ -50,6 +55,27 @@ class App extends Component {
     localStorage.clear();
   }
 
+ /*  editarTarefa(titulo, index){
+      let _arrayAuxiliar = this.arrayTarefas;
+      _arrayAuxiliar[index].titulo=titulo;
+      this.setState({
+        arrayTarefas:_arrayAuxiliar,
+        
+      })
+  } */
+  concluirUmaTarefa(index) {
+    let _arrayAuxiliar = this.arrayTarefas[index];
+    _arrayAuxiliar.concluir=true;
+    console.log(_arrayAuxiliar);
+    this.setState({
+      arrayTarefas:_arrayAuxiliar
+    }) 
+    localStorage.setItem("lista",JSON.stringify(this.arrayTarefas));
+  }
+  
+
+
+
   render(){
     return (  
       <section className="conteudo">
@@ -57,7 +83,10 @@ class App extends Component {
           <FormTarefa criarTarefa = {this.criarTarefa.bind(this)}/>     
           <ListaTarefa arrayTarefas={this.arrayTarefas} 
           apagarTarefa = {this.removerUmaTarefa.bind(this)} 
-          limparLista={this.limparLista.bind(this)}/>
+          limparLista={this.limparLista.bind(this)}
+          concluirTarefa={this.concluirUmaTarefa.bind(this)}
+          //editarTarefa = {this.editarTarefa.bind(this)}
+          />
            
       </section>  
     );
