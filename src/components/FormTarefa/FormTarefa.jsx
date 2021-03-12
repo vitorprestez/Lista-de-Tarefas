@@ -20,7 +20,7 @@ export class FormTarefa extends Component {
     this.props.criarTarefa(this.titulo, this.concluir, this.editar);
   }
 
-
+  
 
   render() {
     return (

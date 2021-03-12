@@ -33,7 +33,6 @@ class App extends Component {
   removerUmaTarefa(index) {
     let _arrayAuxiliar = this.arrayTarefas;
     _arrayAuxiliar.splice(index, 1);
-    console.log(_arrayAuxiliar);
     this.setState({
       arrayTarefas: _arrayAuxiliar,
     });
@@ -51,23 +50,36 @@ class App extends Component {
     localStorage.clear();
   }
 
-  editarTarefa(index) {
-    let _arrayAuxiliar = this.arrayTarefas;
-    _arrayAuxiliar[index].editar=true;
-    this.setState({
-      arrayTarefas: _arrayAuxiliar
-    });
-    
-    localStorage.setItem("lista", JSON.stringify(this.arrayTarefas));
-  }
-
   concluirUmaTarefa(index) {
     let _arrayAuxiliar = this.arrayTarefas[index];
     _arrayAuxiliar.concluir = true;
-    //console.log(_arrayAuxiliar);
     this.setState({
       arrayTarefas: _arrayAuxiliar,
     });
+    localStorage.setItem("lista", JSON.stringify(this.arrayTarefas));
+  }
+
+  editarTarefa(index) {
+    let _arrayAuxiliar = this.arrayTarefas;
+    _arrayAuxiliar[index].editar = true;
+    this.setState({
+      arrayTarefas: _arrayAuxiliar,
+    });
+
+    localStorage.setItem("lista", JSON.stringify(this.arrayTarefas));
+  }
+
+  atualizaTarefa(index, titulo) {
+    let _arrayAuxiliar = this.arrayTarefas;
+    if (!titulo) {
+      titulo = _arrayAuxiliar[index].titulo;
+    }
+    _arrayAuxiliar[index].editar = false;
+    _arrayAuxiliar[index].titulo = titulo;
+    this.setState({
+      arrayTarefas: _arrayAuxiliar,
+    });
+
     localStorage.setItem("lista", JSON.stringify(this.arrayTarefas));
   }
 
@@ -81,6 +93,7 @@ class App extends Component {
           limparLista={this.limparLista.bind(this)}
           concluirTarefa={this.concluirUmaTarefa.bind(this)}
           editarTarefa={this.editarTarefa.bind(this)}
+          atualizaTarefa={this.atualizaTarefa.bind(this)}
         />
       </section>
     );
