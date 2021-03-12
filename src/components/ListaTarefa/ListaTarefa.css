@@ -23,23 +23,59 @@ div{
     width: 10%;
     cursor: pointer;
 }
-.tarefa h1{
-    font-size: 18px;
-    text-align: left;
-    width: 80%;
-    margin: 0 20% 5px 0;
+.tarefa-titulo{
     overflow: hidden;
     
 }
-
-.tarefa CheckCircleOutlineIcon{
+.tarefa-titulo_disabled h1{
+    text-decoration: line-through;
     color: gray;
 }
+.edita-tarefa_input{
+    width: 35%;
+    padding: 8px;
+    margin: 10px 10px;
+    border-width: 1px;
+    
+}
+.editar-tarefa_input{
+    width: 20%;
+    padding: 8px;
+    margin: 0 8px 20px 0;
+    
+}
+
+.editar-tarefa_button{
+    color: white;
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 10px 8px;
+    cursor: pointer;
+}
+
+
+
 @media (max-width:768px){
     .limpar-itens{
         width: 100%;
     }
     .limpar-itens_button{
         width: 75%;
+    }
+    .editar-tarefa{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .editar-tarefa_input{
+        width: 70%;
+        margin: 0 0 0 0;
+    }
+    .editar-tarefa_button{
+        width: 60%;
+        margin: 5px 0 15px 0;
     }
 }

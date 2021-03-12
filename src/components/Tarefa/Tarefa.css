@@ -1,60 +1,49 @@
-
-.tarefa{
-    text-align: center;
-    display: flex;
-    margin: 0px auto 20px auto;
-    width: 35%;
-    height: auto;
+.tarefa {
+  text-align: center;
+  display: flex;
+  margin: 0px auto 20px auto;
+  width: 35%;
+  height: auto;
 }
 
-.tarefa_titulo{
-    font-size: 18px;
-    text-align: left;
+.tarefa_titulo {
+  font-size: 18px;
+  text-align: left;
+  width: 80%;
+  margin: 0 20% 5px 0;
+  color: black;
+  overflow: hidden;
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.tarefa-button_complet {
+  color: rgb(27, 235, 27);
+  cursor: pointer;
+}
+
+.tarefa-button_edit {
+  color: orange;
+  cursor: pointer;
+}
+
+.tarefa-button_delete {
+  color: red;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .tarefa {
+    display: block;
+    margin: 0 auto 10px auto;
     width: 80%;
-    margin: 0 20% 5px 0;
-    color: black;
-    overflow: hidden;
-    font-family: Arial;
-    font-weight: 400;
-    font-size: 15px;
-}
-
-
-.tarefa-button_complet{
-    color:rgb(27, 235, 27);
-    cursor: pointer; 
-}
-.tarefa-button_complet_disabled{
-    color:gray;
-}
-
-.tarefa-button_edit{
-    color: orange;
-    cursor:pointer;
-}
-
-.tarefa-button_delete{
-    color:red;
-    cursor: pointer;
-}
-
-
-
-@media(max-width:768px){
-    .tarefa {
-        display: block;
-        margin: 0 auto 10px auto;
-        width: 80%;
-        text-align: center;
-        height: auto;
-       
-        
-    }
-    .tarefa_titulo{
-        text-align: center;
-        width: 100%;
-        padding: 2px;
- 
-    }
-
+    text-align: center;
+    height: auto;
+  }
+  .tarefa_titulo {
+    text-align: center;
+    width: 100%;
+    padding: 2px;
+  }
 }

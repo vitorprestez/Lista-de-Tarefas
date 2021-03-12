@@ -16,33 +16,27 @@ export class Tarefa extends Component {
   }
   _editarTarefa() {
     const indice = this.props.indice;
-    this.props._editarTarefa(indice);
+    this.props.editarTarefa(indice);
   }
 
   render() {
     return (
       <div className="tarefa">
         <h1
-          className={
-            !this.props.tarefa.concluir
-              ? "tarefa_titulo"
-              : "tarefa_titulo_disabled"
-          }
+          className="tarefa_titulo"
         >
           {this.props.tarefa}
         </h1>
+
         <CheckCircleOutlineIcon
-          className={
-            !this.props.tarefa.concluir
-              ? "tarefa-button_complet"
-              : "tarefa-button_complet_disabled"
-          }
+          className="tarefa-button_complet"
+          id="botaoConcluir"
           onClick={this._concluirTarefa.bind(this)}
         />
 
         <EditIcon
           className="tarefa-button_edit"
-          //onClick={this.editar.bind(this)}
+          onClick={this._editarTarefa.bind(this)}
         />
 
         <DeleteOutlineIcon

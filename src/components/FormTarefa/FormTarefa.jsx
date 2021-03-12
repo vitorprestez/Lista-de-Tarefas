@@ -20,9 +20,7 @@ export class FormTarefa extends Component {
     this.props.criarTarefa(this.titulo, this.concluir, this.editar);
   }
 
-  _editarTarefa(evento) {
-    this.props.editarTarefa(this.titulo);
-  }
+
 
   render() {
     return (
